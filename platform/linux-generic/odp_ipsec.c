@@ -24,7 +24,7 @@ int odp_ipsec_capability(odp_ipsec_capability_t *capa)
 	}
 
 	capa->max_num_sa 	= MAX_NUM_SA;
-	capa->op_mode_sync 	= 0;
+	capa->op_mode_sync 	= 1;
 	capa->op_mode_async 	= 0;
 	capa->soft_limit_sec 	= 0;
 	capa->hard_limit_sec 	= 0;
@@ -46,7 +46,10 @@ int odp_ipsec_auth_capability(odp_auth_alg_t auth,
 	return odp_crypto_auth_capability(auth, capa, num);
 }
 
-void odp_ipsec_config_init(odp_ipsec_config_t *config ODP_UNUSED) {}
+void odp_ipsec_config_init(odp_ipsec_config_t *config ODP_UNUSED)
+{
+	config->op_mode = ODP_IPSEC_MODE_SYNC;
+}
 
 void odp_ipsec_sa_param_init(odp_ipsec_sa_param_t *param ODP_UNUSED) {}
 
