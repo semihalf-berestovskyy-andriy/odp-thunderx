@@ -7,13 +7,9 @@
 #include <odp/api/ipsec.h>
 #include <odp/api/crypto.h>
 #include <odp_debug_internal.h>
+#include <odp_ipsec_internal.h>
 
 #include <string.h>
-
-#define OP_MODE_ASYNC_AVAILABLE		0
-
-/* to be changed when implementing SAs */
-#define MAX_NUM_SA			0
 
 int odp_ipsec_capability(odp_ipsec_capability_t *capa)
 {
